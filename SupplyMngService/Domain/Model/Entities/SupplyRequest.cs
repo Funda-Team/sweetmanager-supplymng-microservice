@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SupplyMngService.Domain.Model.Aggregates;
 
-namespace SupplyMngService;
+namespace SupplyMngService.Domain.Model.Entities;
 
 public partial class SupplyRequest
 {

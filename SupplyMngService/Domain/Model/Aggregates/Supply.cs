@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SupplyMngService.Domain.Model.Entities;
 
-namespace SupplyMngService;
+namespace SupplyMngService.Domain.Model.Aggregates;
 
 public partial class Supply
 {

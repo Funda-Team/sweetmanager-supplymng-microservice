@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using SupplyMngService.Domain.Model.Aggregates;
+using SupplyMngService.Domain.Model.Entities;
 
 namespace SupplyMngService.Shared.Infrastructure.Persistence.EFC.Configuration;
 
