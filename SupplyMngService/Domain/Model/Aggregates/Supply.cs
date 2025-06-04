@@ -1,4 +1,5 @@
-﻿using SupplyMngService.Domain.Model.Entities;
+﻿using SupplyMngService.Domain.Model.Commands;
+using SupplyMngService.Domain.Model.Entities;
 
 namespace SupplyMngService.Domain.Model.Aggregates;
 
@@ -18,5 +19,35 @@ public partial class Supply
 
     public int? HotelsId { get; set; }
 
-    public virtual ICollection<SupplyRequest> SupplyRequests { get; set; } = new List<SupplyRequest>();
+    public virtual ICollection<SuppliesRequest> SupplyRequests { get; set; } = new List<SuppliesRequest>();
+
+    public Supply() { }
+
+    public Supply(int id, int providersId, string name, decimal price, int stock, string state)
+    {
+        Id = id;
+        ProvidersId = providersId;
+        Name = name.ToUpper();
+        Price = price;
+        Stock = stock;
+        State = state.ToUpper();
+    }
+
+    public Supply(CreateSupplyCommand command)
+    {
+        ProvidersId = command.ProvidersId;
+        Name = command.Name.ToUpper();
+        Price = command.Price;
+        Stock = command.Stock;
+        State = command.State.ToUpper();
+    }
+
+    public void Update(UpdateSupplyCommand command)
+    {
+        ProvidersId = command.ProvidersId;
+        Name = command.Name.ToUpper();
+        Price = command.Price;
+        Stock = command.Stock;
+        State = command.State.ToUpper();
+    }
 }
